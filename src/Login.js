@@ -2,13 +2,21 @@ import React from 'react';
 import "./Login.css";
 import {Button} from "@material-ui/core"
 import { auth, provider } from './firebase';
+import { actionTypes } from './reducer';
+import {useStateValue} from "./StateProvider";
 function login() {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const [{}, dispatch] = useStateValue();
 
     const signIn = () => {
         auth
         .signInWithPopup(provider)
-        .then((result) => console.log(result))
-        .catch((error) => alert(error.message));
+        .then((result) => {
+            dispatch({
+                type: actionTypes.SET_USER,
+                user: result.user,
+            });
+        }) 
     };
     return (
         <div className="login">

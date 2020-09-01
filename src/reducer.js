@@ -2,6 +2,7 @@ export const initialState = {
     user: null
 };
 
+//Push information into data
 export const actionTypes = {
     SET_USER: "SET_USER"
 };

@@ -1,5 +1,5 @@
 export const initialState = {
-    user: null
+    user: null,
 };
 
 //Push information into data

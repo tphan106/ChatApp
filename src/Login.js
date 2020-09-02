@@ -6,7 +6,7 @@ import { actionTypes } from './reducer';
 import {useStateValue} from "./StateProvider";
 function login() {
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const [{}, dispatch] = useStateValue();
+    const [ {}, dispatch] = useStateValue();
 
     const signIn = () => {
         auth
